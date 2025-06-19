@@ -1,7 +1,7 @@
 {
   "name": "mindm8-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "sendPush.js",
   "dependencies": {
     "firebase-admin": "^11.10.1"
   }

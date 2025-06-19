@@ -1,6 +1,6 @@
 const admin = require("firebase-admin");
 
-const serviceAccount = require("../../serviceAccountKey.json");
+const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG);
 
 if (!admin.apps.length) {
   admin.initializeApp({
@@ -10,7 +10,7 @@ if (!admin.apps.length) {
 
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
-    return res.status(405).send({ error: "Only POST allowed" });
+    return res.status(405).json({ error: "Only POST allowed" });
   }
 
   const { token, title, body } = req.body;
